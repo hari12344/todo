@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center  mt-5" >
+      <div class="col-lg-4 col-md-10 shadow ">
+        <h1 class="text-center text-success  border-bottom">Login Your Account</h1>
+        {% comment %} <hr>  {% endcomment %}
+      
+
+      {% if error %}
+      <div class="alert alert-danger" role="alert">
+        <stront>{{error}}</strong>
+      </div>
+      {% endif %}
+      
+<form class=" py-2" action='' method="post">
+ 
+  {% csrf_token %}
+    <div class="mb-3 ">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="useremail">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="userpassword">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <hr>
+    <div class="text-center text-warning">
+    <p class="p-0 m-0">Already have an account </p><p>Or</p>
+    <a href="/signin/">Create account</a>
+    </div>
+  </form>
+</div>
+
+</div>
+</div>
+{% endblock content %}

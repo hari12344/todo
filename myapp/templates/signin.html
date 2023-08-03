@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center p-0 mt-4 " >
+      <div class="col-lg-5 col-md-10 shadow  m-0">
+
+        <h2 class="text-center text-white mx-1 border-bottom mt-2 pb-1 bg-secondary">Create Account</h2>
+          
+        {%if error%}
+      <div class="alert alert-danger" role="alert">
+        <strong>{{error}}</strong>
+      </div>
+      {% endif %}
+
+<form class="    py-2 #boxshadow" action="" method='post'>
+    {% csrf_token %}
+    <div class="mb-2 ">
+        <label for="exampleInputfname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="exampleInputfname" name="fname">
+      </div><div class="mb-3 ">
+        <label for="exampleInputlname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="exampleInputlname" name="lname">
+      </div>
+    <div class="mb-2 ">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-2">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+    <div class="mb-2 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr>
+    <div class="text-center m-0 p-0 ">
+    <p class="p-0 m-0 border-bottom">Already have an account </p>
+    {% comment %} <hr width=50% class="mx-auto text-dark"> {% endcomment %}
+    <a href="/login/">Login</a>
+    <div>
+  </form>
+</div>
+</div>
+</div>
+{% endblock content %}
